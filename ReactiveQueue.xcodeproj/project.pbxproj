@@ -9,7 +9,19 @@
 /* Begin PBXBuildFile section */
 		EA2CA10A1B0DAD0900F6BA84 /* ReactiveQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EA2CA1091B0DAD0900F6BA84 /* ReactiveQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA2CA1101B0DAD0900F6BA84 /* ReactiveQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2CA1041B0DAD0900F6BA84 /* ReactiveQueue.framework */; };
-		EA2CA1171B0DAD0900F6BA84 /* ReactiveQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2CA1161B0DAD0900F6BA84 /* ReactiveQueueTests.swift */; };
+		EA2CA1211B0DADC600F6BA84 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2CA1201B0DADC600F6BA84 /* Queue.swift */; };
+		EA2CA1231B0DADE900F6BA84 /* QueueSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2CA1221B0DADE900F6BA84 /* QueueSpec.swift */; };
+		EA2CA1271B0DB18C00F6BA84 /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2CA1241B0DB18C00F6BA84 /* Box.framework */; };
+		EA2CA1281B0DB18C00F6BA84 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2CA1251B0DB18C00F6BA84 /* ReactiveCocoa.framework */; };
+		EA2CA1291B0DB18C00F6BA84 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2CA1261B0DB18C00F6BA84 /* Result.framework */; };
+		EA2CA12D1B0DB20200F6BA84 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2CA12B1B0DB20200F6BA84 /* Nimble.framework */; };
+		EA2CA12E1B0DB20200F6BA84 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2CA12C1B0DB20200F6BA84 /* Quick.framework */; };
+		EA2CA1301B0DB21B00F6BA84 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA2CA12B1B0DB20200F6BA84 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EA2CA1311B0DB21B00F6BA84 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA2CA12C1B0DB20200F6BA84 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EA2CA1361B0DB47E00F6BA84 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2CA1261B0DB18C00F6BA84 /* Result.framework */; };
+		EA2CA1371B0DB48B00F6BA84 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2CA1251B0DB18C00F6BA84 /* ReactiveCocoa.framework */; };
+		EA2CA1381B0DB48E00F6BA84 /* ReactiveCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA2CA1251B0DB18C00F6BA84 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EA2CA1391B0DB49400F6BA84 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA2CA1261B0DB18C00F6BA84 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,13 +34,35 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		EA2CA12F1B0DB20D00F6BA84 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EA2CA1391B0DB49400F6BA84 /* Result.framework in CopyFiles */,
+				EA2CA1301B0DB21B00F6BA84 /* Nimble.framework in CopyFiles */,
+				EA2CA1311B0DB21B00F6BA84 /* Quick.framework in CopyFiles */,
+				EA2CA1381B0DB48E00F6BA84 /* ReactiveCocoa.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		EA2CA1041B0DAD0900F6BA84 /* ReactiveQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2CA1081B0DAD0900F6BA84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA2CA1091B0DAD0900F6BA84 /* ReactiveQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveQueue.h; sourceTree = "<group>"; };
 		EA2CA10F1B0DAD0900F6BA84 /* ReactiveQueueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveQueueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2CA1151B0DAD0900F6BA84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA2CA1161B0DAD0900F6BA84 /* ReactiveQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveQueueTests.swift; sourceTree = "<group>"; };
+		EA2CA1201B0DADC600F6BA84 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		EA2CA1221B0DADE900F6BA84 /* QueueSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueSpec.swift; sourceTree = "<group>"; };
+		EA2CA1241B0DB18C00F6BA84 /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = ../Carthage/Build/iOS/Box.framework; sourceTree = "<group>"; };
+		EA2CA1251B0DB18C00F6BA84 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = ../Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		EA2CA1261B0DB18C00F6BA84 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = ../Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		EA2CA12B1B0DB20200F6BA84 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		EA2CA12C1B0DB20200F6BA84 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = ../Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +70,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA2CA1271B0DB18C00F6BA84 /* Box.framework in Frameworks */,
+				EA2CA1281B0DB18C00F6BA84 /* ReactiveCocoa.framework in Frameworks */,
+				EA2CA1291B0DB18C00F6BA84 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +81,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA2CA1101B0DAD0900F6BA84 /* ReactiveQueue.framework in Frameworks */,
+				EA2CA12D1B0DB20200F6BA84 /* Nimble.framework in Frameworks */,
+				EA2CA12E1B0DB20200F6BA84 /* Quick.framework in Frameworks */,
+				EA2CA1361B0DB47E00F6BA84 /* Result.framework in Frameworks */,
+				EA2CA1371B0DB48B00F6BA84 /* ReactiveCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +112,8 @@
 		EA2CA1061B0DAD0900F6BA84 /* ReactiveQueue */ = {
 			isa = PBXGroup;
 			children = (
+				EA2CA1321B0DB22200F6BA84 /* Frameworks */,
+				EA2CA1201B0DADC600F6BA84 /* Queue.swift */,
 				EA2CA1091B0DAD0900F6BA84 /* ReactiveQueue.h */,
 				EA2CA1071B0DAD0900F6BA84 /* Supporting Files */,
 			);
@@ -88,7 +131,8 @@
 		EA2CA1131B0DAD0900F6BA84 /* ReactiveQueueTests */ = {
 			isa = PBXGroup;
 			children = (
-				EA2CA1161B0DAD0900F6BA84 /* ReactiveQueueTests.swift */,
+				EA2CA1331B0DB23100F6BA84 /* Frameworks */,
+				EA2CA1221B0DADE900F6BA84 /* QueueSpec.swift */,
 				EA2CA1141B0DAD0900F6BA84 /* Supporting Files */,
 			);
 			path = ReactiveQueueTests;
@@ -100,6 +144,25 @@
 				EA2CA1151B0DAD0900F6BA84 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA2CA1321B0DB22200F6BA84 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA2CA1251B0DB18C00F6BA84 /* ReactiveCocoa.framework */,
+				EA2CA1241B0DB18C00F6BA84 /* Box.framework */,
+				EA2CA1261B0DB18C00F6BA84 /* Result.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA2CA1331B0DB23100F6BA84 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA2CA12B1B0DB20200F6BA84 /* Nimble.framework */,
+				EA2CA12C1B0DB20200F6BA84 /* Quick.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +187,7 @@
 				EA2CA1001B0DAD0900F6BA84 /* Frameworks */,
 				EA2CA1011B0DAD0900F6BA84 /* Headers */,
 				EA2CA1021B0DAD0900F6BA84 /* Resources */,
+				EA2CA12A1B0DB1C300F6BA84 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -141,6 +205,7 @@
 				EA2CA10B1B0DAD0900F6BA84 /* Sources */,
 				EA2CA10C1B0DAD0900F6BA84 /* Frameworks */,
 				EA2CA10D1B0DAD0900F6BA84 /* Resources */,
+				EA2CA12F1B0DB20D00F6BA84 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -204,11 +269,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		EA2CA12A1B0DB1C300F6BA84 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Box.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EA2CA0FF1B0DAD0900F6BA84 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA2CA1211B0DADC600F6BA84 /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA2CA1171B0DAD0900F6BA84 /* ReactiveQueueTests.swift in Sources */,
+				EA2CA1231B0DADE900F6BA84 /* QueueSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,25 +408,36 @@
 		EA2CA11B1B0DAD0900F6BA84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ReactiveQueue/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		EA2CA11C1B0DAD0900F6BA84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ReactiveQueue/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -356,6 +452,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -373,6 +470,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = ReactiveQueueTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -399,6 +497,7 @@
 				EA2CA11C1B0DAD0900F6BA84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA2CA11D1B0DAD0900F6BA84 /* Build configuration list for PBXNativeTarget "ReactiveQueueTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +506,7 @@
 				EA2CA11F1B0DAD0900F6BA84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
