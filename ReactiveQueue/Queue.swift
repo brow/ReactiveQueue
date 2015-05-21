@@ -17,10 +17,7 @@ public struct Queue<T>: SinkType {
     
     self.elementsSink = elementsSink
     
-    pop = SignalProducer { observer, disposable in
-      sendNext(poppersSink, observer)
-      return
-    }
+    pop = SignalProducer { observer, _ in sendNext(poppersSink, observer) }
     
     elements
       |> zipWith(poppers)
