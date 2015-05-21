@@ -24,8 +24,8 @@ public struct Queue<T>: SinkType {
     
     elements
       |> zipWith(poppers)
-      |> observe(next: { item, popper in
-        sendNext(popper, item)
+      |> observe(next: { element, popper in
+        sendNext(popper, element)
         sendCompleted(popper)
       })
   }
