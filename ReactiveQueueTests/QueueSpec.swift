@@ -33,6 +33,9 @@ class QueueSpec: QuickSpec {
       
       it.pop { _ in popped.append("a") }
       it.pop { _ in popped.append("b") }
+      
+      expect(popped) == []
+      
       it.enqueue(1)
       it.enqueue(2)
       
