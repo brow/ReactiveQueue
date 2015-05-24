@@ -8,13 +8,13 @@
 
 import ReactiveCocoa
 
-public struct Queue<T> {
+public class Queue<T> {
   public init() {
     let (elements, elementsSink) = SignalProducer<T, NoError>.buffer(0)
     self.elementsSink = elementsSink
     self.queue = elements |> ReactiveQueue.enqueue
   }
-  
+
   public func enqueue(element: T) {
     sendNext(elementsSink, element)
   }
@@ -27,6 +27,10 @@ public struct Queue<T> {
   
   private let elementsSink: SinkOf<Event<T, NoError>>
   private let queue: SignalProducer<T, NoError>
+  
+  deinit {
+    sendCompleted(elementsSink)
+  }
 }
 
 func enqueue<T>(elements: SignalProducer<T, NoError>) -> SignalProducer<T, NoError> {
