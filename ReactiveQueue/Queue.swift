@@ -43,5 +43,12 @@ func enqueue<T>(elements: SignalProducer<T, NoError>) -> SignalProducer<T, NoErr
       sendCompleted(popper)
     })
   
-  return SignalProducer { observer, _ in sendNext(poppersSink, observer) }
+  let poppersDisposable = ScopedDisposable(ActionDisposable {
+    sendCompleted(poppersSink)
+  })
+  
+  return SignalProducer { observer, _ in
+    sendNext(poppersSink, observer)
+    poppersDisposable
+  }
 }
