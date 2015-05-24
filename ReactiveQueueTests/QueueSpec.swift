@@ -14,14 +14,29 @@ import Result
 
 class QueueSpec: QuickSpec {
   override func spec() {
-    
     it("should pop elements in FIFO order") {
       let it = Queue<Int>()
-      it.put(1)
-      it.put(2)
-      expect(first(it.pop)?.value) == 1
-      expect(first(it.pop)?.value) == 2
+      it.enqueue(1)
+      it.enqueue(2)
+      
+      var popped: Int? = nil
+      it.pop { popped = $0 }
+      expect(popped) == 1
+      
+      it.pop { popped = $0 }
+      expect(popped) == 2
     }
     
+    it("should serve poppers in FIFO order") {
+      let it = Queue<Int>()
+      var popped = Array<String>()
+      
+      it.pop { _ in popped.append("a") }
+      it.pop { _ in popped.append("b") }
+      it.enqueue(1)
+      it.enqueue(2)
+      
+      expect(popped) == ["a", "b"]
+    }
   }
 }

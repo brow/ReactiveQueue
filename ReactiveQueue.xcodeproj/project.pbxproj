@@ -112,9 +112,9 @@
 		EA2CA1061B0DAD0900F6BA84 /* ReactiveQueue */ = {
 			isa = PBXGroup;
 			children = (
-				EA2CA1321B0DB22200F6BA84 /* Frameworks */,
-				EA2CA1201B0DADC600F6BA84 /* Queue.swift */,
 				EA2CA1091B0DAD0900F6BA84 /* ReactiveQueue.h */,
+				EA2CA1201B0DADC600F6BA84 /* Queue.swift */,
+				EA2CA1321B0DB22200F6BA84 /* Frameworks */,
 				EA2CA1071B0DAD0900F6BA84 /* Supporting Files */,
 			);
 			path = ReactiveQueue;
@@ -131,8 +131,8 @@
 		EA2CA1131B0DAD0900F6BA84 /* ReactiveQueueTests */ = {
 			isa = PBXGroup;
 			children = (
-				EA2CA1331B0DB23100F6BA84 /* Frameworks */,
 				EA2CA1221B0DADE900F6BA84 /* QueueSpec.swift */,
+				EA2CA1331B0DB23100F6BA84 /* Frameworks */,
 				EA2CA1141B0DAD0900F6BA84 /* Supporting Files */,
 			);
 			path = ReactiveQueueTests;
