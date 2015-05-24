@@ -20,7 +20,7 @@ public func enqueue<T>(elements: SignalProducer<T, NoError>) -> SignalProducer<T
   
   let poppersDisposable = ScopedDisposable(ActionDisposable {
     sendCompleted(poppersSink)
-    })
+  })
   
   return SignalProducer { observer, _ in
     sendNext(poppersSink, observer)
