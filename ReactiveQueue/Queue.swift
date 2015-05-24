@@ -32,23 +32,3 @@ public class Queue<T> {
     sendCompleted(elementsSink)
   }
 }
-
-func enqueue<T>(elements: SignalProducer<T, NoError>) -> SignalProducer<T, NoError> {
-  let (poppers, poppersSink) = Signal<SinkOf<Event<T, NoError>>, NoError>.pipe()
-  
-  elements
-    |> zipWith(poppers)
-    |> start(next: { element, popper in
-      sendNext(popper, element)
-      sendCompleted(popper)
-    })
-  
-  let poppersDisposable = ScopedDisposable(ActionDisposable {
-    sendCompleted(poppersSink)
-  })
-  
-  return SignalProducer { observer, _ in
-    sendNext(poppersSink, observer)
-    poppersDisposable
-  }
-}

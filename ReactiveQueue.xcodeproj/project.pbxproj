@@ -22,6 +22,7 @@
 		EA2CA1371B0DB48B00F6BA84 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2CA1251B0DB18C00F6BA84 /* ReactiveCocoa.framework */; };
 		EA2CA1381B0DB48E00F6BA84 /* ReactiveCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA2CA1251B0DB18C00F6BA84 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EA2CA1391B0DB49400F6BA84 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA2CA1261B0DB18C00F6BA84 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EABB0F711B121B670038FF0D /* Enqueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABB0F701B121B670038FF0D /* Enqueue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		EA2CA1261B0DB18C00F6BA84 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = ../Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		EA2CA12B1B0DB20200F6BA84 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		EA2CA12C1B0DB20200F6BA84 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = ../Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		EABB0F701B121B670038FF0D /* Enqueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enqueue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				EA2CA1091B0DAD0900F6BA84 /* ReactiveQueue.h */,
+				EABB0F701B121B670038FF0D /* Enqueue.swift */,
 				EA2CA1201B0DADC600F6BA84 /* Queue.swift */,
 				EA2CA1321B0DB22200F6BA84 /* Frameworks */,
 				EA2CA1071B0DAD0900F6BA84 /* Supporting Files */,
@@ -293,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EABB0F711B121B670038FF0D /* Enqueue.swift in Sources */,
 				EA2CA1211B0DADC600F6BA84 /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
