@@ -33,6 +33,10 @@ public func popAll<T>(queue: SignalProducer<T, NoError>) -> SignalProducer<(T, c
     let (completions, completionsSink) = Signal<(), NoError>.pipe()
     let completionHandler = { sendNext(completionsSink, ()) }
     
+    disposable.addDisposable {
+      sendCompleted(completionsSink)
+    }
+    
     completions
       |> flatMap(.Concat) { _ in
         SignalProducer<T, NoError> { innerObserver, _ in
