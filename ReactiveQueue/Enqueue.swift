@@ -27,3 +27,22 @@ public func enqueue<T>(elements: SignalProducer<T, NoError>) -> SignalProducer<T
     poppersDisposable
   }
 }
+
+public func popAll<T>(queue: SignalProducer<T, NoError>) -> SignalProducer<(T, completion: () -> ()), NoError> {
+  return SignalProducer<(T, completion: () -> ()), NoError> { observer, disposable in
+    let (completions, completionsSink) = Signal<(), NoError>.pipe()
+    let completionHandler = { sendNext(completionsSink, ()) }
+    
+    completions
+      |> flatMap(.Concat) { _ in
+        SignalProducer<T, NoError> { innerObserver, _ in
+          queue.start(innerObserver)
+        }
+      }
+      |> observe(next: { element in
+        sendNext(observer, (element, completionHandler))
+      })
+    
+    completionHandler()
+  }
+}

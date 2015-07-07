@@ -23,6 +23,7 @@
 		EA2CA1381B0DB48E00F6BA84 /* ReactiveCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA2CA1251B0DB18C00F6BA84 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EA2CA1391B0DB49400F6BA84 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA2CA1261B0DB18C00F6BA84 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EABB0F711B121B670038FF0D /* Enqueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABB0F701B121B670038FF0D /* Enqueue.swift */; };
+		EAF7BA571B4B4888005C6FE6 /* OperatorsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF7BA561B4B4888005C6FE6 /* OperatorsSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		EA2CA12B1B0DB20200F6BA84 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		EA2CA12C1B0DB20200F6BA84 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = ../Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		EABB0F701B121B670038FF0D /* Enqueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enqueue.swift; sourceTree = "<group>"; };
+		EAF7BA561B4B4888005C6FE6 /* OperatorsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorsSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		EA2CA1131B0DAD0900F6BA84 /* ReactiveQueueTests */ = {
 			isa = PBXGroup;
 			children = (
+				EAF7BA561B4B4888005C6FE6 /* OperatorsSpec.swift */,
 				EA2CA1221B0DADE900F6BA84 /* QueueSpec.swift */,
 				EA2CA1331B0DB23100F6BA84 /* Frameworks */,
 				EA2CA1141B0DAD0900F6BA84 /* Supporting Files */,
@@ -305,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAF7BA571B4B4888005C6FE6 /* OperatorsSpec.swift in Sources */,
 				EA2CA1231B0DADE900F6BA84 /* QueueSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
