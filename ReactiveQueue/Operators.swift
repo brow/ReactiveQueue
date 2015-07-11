@@ -30,7 +30,7 @@ public func enqueue<T>(elements: SignalProducer<T, NoError>) -> SignalProducer<T
 
 public func popAll<T>(queue: SignalProducer<T, NoError>) -> SignalProducer<(T, completion: () -> ()), NoError> {
   return SignalProducer<(T, completion: () -> ()), NoError> { observer, disposable in
-    let (completions, completionsSink) = Signal<(), NoError>.pipe()
+    let (completions, completionsSink) = SignalProducer<(), NoError>.buffer()
     let completionHandler = { sendNext(completionsSink, ()) }
     
     disposable.addDisposable {
@@ -43,7 +43,7 @@ public func popAll<T>(queue: SignalProducer<T, NoError>) -> SignalProducer<(T, c
           queue.start(innerObserver)
         }
       }
-      |> observe(next: { element in
+      |> start(next: { element in
         sendNext(observer, (element, completionHandler))
       })
     
