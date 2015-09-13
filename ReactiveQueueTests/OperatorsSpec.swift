@@ -16,17 +16,17 @@ class OperatorsSpec: QuickSpec {
   override func spec() {
     describe("enqueue") {
       it("should return a SignalProducer that pops one value per start") {
-        let queue = SignalProducer(values: [1, 2]) |> enqueue
+        let queue = SignalProducer(values: [1, 2]).enqueue()
         var saved: Int? = nil
         let save: Int -> () = { saved = $0 }
         
-        queue.start(next: save)
+        queue.startWithNext(save)
         expect(saved) == 1
         
-        queue.start(next: save)
+        queue.startWithNext(save)
         expect(saved) == 2
         
-        queue.start(next: save)
+        queue.startWithNext(save)
         expect(saved) == 2
       }
     }
@@ -37,12 +37,12 @@ class OperatorsSpec: QuickSpec {
         var latestCompletion: (() -> ())?
         
         SignalProducer(values: [1, 2])
-          |> enqueue
-          |> popAll
-          |> start(next: { element, completion in
+          .enqueue()
+          .popAll()
+          .startWithNext { element, completion in
             latestElement = element
             latestCompletion = completion
-          })
+          }
         
         expect(latestElement) == 1
         

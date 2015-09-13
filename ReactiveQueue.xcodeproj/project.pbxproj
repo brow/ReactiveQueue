@@ -11,7 +11,6 @@
 		EA2CA1101B0DAD0900F6BA84 /* ReactiveQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2CA1041B0DAD0900F6BA84 /* ReactiveQueue.framework */; };
 		EA2CA1211B0DADC600F6BA84 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2CA1201B0DADC600F6BA84 /* Queue.swift */; };
 		EA2CA1231B0DADE900F6BA84 /* QueueSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2CA1221B0DADE900F6BA84 /* QueueSpec.swift */; };
-		EA2CA1271B0DB18C00F6BA84 /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2CA1241B0DB18C00F6BA84 /* Box.framework */; };
 		EA2CA1281B0DB18C00F6BA84 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2CA1251B0DB18C00F6BA84 /* ReactiveCocoa.framework */; };
 		EA2CA1291B0DB18C00F6BA84 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2CA1261B0DB18C00F6BA84 /* Result.framework */; };
 		EA2CA12D1B0DB20200F6BA84 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2CA12B1B0DB20200F6BA84 /* Nimble.framework */; };
@@ -60,7 +59,6 @@
 		EA2CA1151B0DAD0900F6BA84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA2CA1201B0DADC600F6BA84 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		EA2CA1221B0DADE900F6BA84 /* QueueSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueSpec.swift; sourceTree = "<group>"; };
-		EA2CA1241B0DB18C00F6BA84 /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = ../Carthage/Build/iOS/Box.framework; sourceTree = "<group>"; };
 		EA2CA1251B0DB18C00F6BA84 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = ../Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		EA2CA1261B0DB18C00F6BA84 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = ../Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		EA2CA12B1B0DB20200F6BA84 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA2CA1271B0DB18C00F6BA84 /* Box.framework in Frameworks */,
 				EA2CA1281B0DB18C00F6BA84 /* ReactiveCocoa.framework in Frameworks */,
 				EA2CA1291B0DB18C00F6BA84 /* Result.framework in Frameworks */,
 			);
@@ -156,7 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				EA2CA1251B0DB18C00F6BA84 /* ReactiveCocoa.framework */,
-				EA2CA1241B0DB18C00F6BA84 /* Box.framework */,
 				EA2CA1261B0DB18C00F6BA84 /* Result.framework */,
 			);
 			name = Frameworks;
@@ -229,6 +225,7 @@
 		EA2CA0FB1B0DAD0800F6BA84 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Tom Brow";
 				TargetAttributes = {
@@ -284,7 +281,6 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Box.framework",
 			);
 			outputPaths = (
 			);
@@ -460,7 +456,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
@@ -478,7 +473,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);

@@ -8,45 +8,46 @@
 
 import ReactiveCocoa
 
-public func enqueue<T>(elements: SignalProducer<T, NoError>) -> SignalProducer<T, NoError> {
-  let (poppers, poppersSink) = Signal<SinkOf<Event<T, NoError>>, NoError>.pipe()
-  
-  elements
-    |> zipWith(poppers)
-    |> start(next: { element, popper in
-      sendNext(popper, element)
-      sendCompleted(popper)
-    })
-  
-  let poppersDisposable = ScopedDisposable(ActionDisposable {
-    sendCompleted(poppersSink)
-  })
-  
-  return SignalProducer { observer, _ in
-    sendNext(poppersSink, observer)
-    poppersDisposable
-  }
-}
-
-public func popAll<T>(queue: SignalProducer<T, NoError>) -> SignalProducer<(T, completion: () -> ()), NoError> {
-  return SignalProducer<(T, completion: () -> ()), NoError> { observer, disposable in
-    let (completions, completionsSink) = SignalProducer<(), NoError>.buffer()
-    let completionHandler = { sendNext(completionsSink, ()) }
+extension SignalProducerType where E == NoError {
+  public func enqueue() -> SignalProducer<T, NoError> {
+    let (poppers, poppersSink) = SignalProducer<Event<T, NoError>.Sink, NoError>.buffer(0)
     
-    disposable.addDisposable {
-      sendCompleted(completionsSink)
-    }
-    
-    completions
-      |> flatMap(.Concat) { _ in
-        SignalProducer<T, NoError> { innerObserver, _ in
-          queue.start(innerObserver)
-        }
+    zipWith(poppers)
+      .startWithNext { element, popper in
+        sendNext(popper, element)
+        sendCompleted(popper)
       }
-      |> start(next: { element in
-        sendNext(observer, (element, completionHandler))
-      })
     
-    completionHandler()
+    let poppersDisposable = ScopedDisposable(ActionDisposable {
+      sendCompleted(poppersSink)
+    })
+    
+    return SignalProducer { observer, _ in
+      sendNext(poppersSink, observer)
+      poppersDisposable
+    }
+  }
+
+  public func popAll() -> SignalProducer<(T, completion: () -> ()), NoError> {
+    return SignalProducer<(T, completion: () -> ()), NoError> { observer, disposable in
+      let (completions, completionsSink) = SignalProducer<(), NoError>.buffer()
+      let completionHandler = { sendNext(completionsSink, ()) }
+      
+      disposable.addDisposable {
+        sendCompleted(completionsSink)
+      }
+      
+      completions
+        .flatMap(.Concat) { _ in
+          SignalProducer<T, NoError> { innerObserver, _ in
+            start(innerObserver)
+          }
+        }
+        .startWithNext { element in
+          sendNext(observer, (element, completionHandler))
+        }
+      
+      completionHandler()
+    }
   }
 }

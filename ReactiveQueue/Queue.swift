@@ -12,7 +12,7 @@ public class Queue<T> {
   public init() {
     let (elements, elementsSink) = SignalProducer<T, NoError>.buffer(0)
     self.elementsSink = elementsSink
-    self.queue = elements |> ReactiveQueue.enqueue
+    self.queue = elements.enqueue()
   }
 
   public func enqueue(element: T) {
@@ -20,12 +20,12 @@ public class Queue<T> {
   }
   
   public func pop(then: T -> ()) {
-    queue.start(next: then)
+    queue.startWithNext(then)
   }
   
   // MARK: private 
   
-  private let elementsSink: SinkOf<Event<T, NoError>>
+  private let elementsSink: Event<T, NoError>.Sink
   private let queue: SignalProducer<T, NoError>
   
   deinit {
