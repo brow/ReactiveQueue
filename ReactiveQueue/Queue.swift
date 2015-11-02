@@ -16,7 +16,7 @@ public class Queue<T> {
   }
 
   public func enqueue(element: T) {
-    sendNext(elementsSink, element)
+    elementsSink.sendNext(element)
   }
   
   public func pop(then: T -> ()) {
@@ -25,10 +25,10 @@ public class Queue<T> {
   
   // MARK: private 
   
-  private let elementsSink: Event<T, NoError>.Sink
+  private let elementsSink: Observer<T, NoError>
   private let queue: SignalProducer<T, NoError>
   
   deinit {
-    sendCompleted(elementsSink)
+    elementsSink.sendCompleted()
   }
 }

@@ -8,43 +8,43 @@
 
 import ReactiveCocoa
 
-extension SignalProducerType where E == NoError {
-  public func enqueue() -> SignalProducer<T, NoError> {
-    let (poppers, poppersSink) = SignalProducer<Event<T, NoError>.Sink, NoError>.buffer(0)
+extension SignalProducerType where Error == NoError {
+  public func enqueue() -> SignalProducer<Value, NoError> {
+    let (poppers, poppersSink) = SignalProducer<Observer<Value, NoError>, NoError>.buffer(0)
     
     zipWith(poppers)
       .startWithNext { element, popper in
-        sendNext(popper, element)
-        sendCompleted(popper)
+        popper.sendNext(element)
+        popper.sendCompleted()
       }
     
     let poppersDisposable = ScopedDisposable(ActionDisposable {
-      sendCompleted(poppersSink)
+      poppersSink.sendCompleted()
     })
     
     return SignalProducer { observer, _ in
-      sendNext(poppersSink, observer)
+      poppersSink.sendNext(observer)
       poppersDisposable
     }
   }
 
-  public func popAll() -> SignalProducer<(T, completion: () -> ()), NoError> {
-    return SignalProducer<(T, completion: () -> ()), NoError> { observer, disposable in
+  public func popAll() -> SignalProducer<(Value, completion: () -> ()), NoError> {
+    return SignalProducer<(Value, completion: () -> ()), NoError> { observer, disposable in
       let (completions, completionsSink) = SignalProducer<(), NoError>.buffer()
-      let completionHandler = { sendNext(completionsSink, ()) }
+      let completionHandler = { completionsSink.sendNext(()) }
       
       disposable.addDisposable {
-        sendCompleted(completionsSink)
+        completionsSink.sendCompleted()
       }
       
       completions
         .flatMap(.Concat) { _ in
-          SignalProducer<T, NoError> { innerObserver, _ in
-            start(innerObserver)
+          SignalProducer<Value, NoError> { innerObserver, _ in
+            self.start(innerObserver)
           }
         }
         .startWithNext { element in
-          sendNext(observer, (element, completionHandler))
+          observer.sendNext((element, completionHandler))
         }
       
       completionHandler()
