@@ -189,7 +189,6 @@
 				EA2CA1001B0DAD0900F6BA84 /* Frameworks */,
 				EA2CA1011B0DAD0900F6BA84 /* Headers */,
 				EA2CA1021B0DAD0900F6BA84 /* Resources */,
-				EA2CA12A1B0DB1C300F6BA84 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -271,24 +270,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		EA2CA12A1B0DB1C300F6BA84 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EA2CA0FF1B0DAD0900F6BA84 /* Sources */ = {
